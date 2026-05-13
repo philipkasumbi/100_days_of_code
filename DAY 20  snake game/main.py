@@ -1,5 +1,6 @@
 from turtle import Turtle,Screen
 import time
+from Food import  Food
 
 starting_point = [(0,0),(-20,0),(-40,0)]
 
@@ -16,18 +17,22 @@ for position  in starting_point:
     snake = Turtle("square")
     snake.color("white")
     snake.penup()
-    snake.speed("slow")
+    snake.speed("fastest")
     snake.goto(position)
     segments.append(snake)
 
 def move_up():
-    segments[0].setheading(90)
+    if segments[0].heading() != 270:
+        segments[0].setheading(90)
 def move_down():
-    segments[0].setheading(270)
+    if segments[0].heading() != 90:
+        segments[0].setheading(270)
 def move_left():
-    segments[0].setheading(180)
+    if segments[0].heading() != 0:
+        segments[0].setheading(180)
 def move_right():
-    segments[0].setheading(0)
+    if segments[0].heading() != 180:
+        segments[0].setheading(0)
 
 screen.onkey(move_up,"Up")
 screen.onkey(move_down,"Down")
@@ -43,11 +48,8 @@ def move():
         segments[i].goto(new_x, new_y)
 
     segments[0].forward(20)
-    # head_x = segments[0].xcor()
-    # head_y = segments[0].ycor()
-    #
-    # segments[0].goto(head_x + 20,head_y)
 
+food = Food()
 
 game_is_on = True
 
@@ -55,6 +57,11 @@ while game_is_on:
     screen.update()
     time.sleep(0.2)
     move()
+
+#     detect collision
+    if segments[0].distance(food) < 15:
+        food.refresh()
+
 
 
 
