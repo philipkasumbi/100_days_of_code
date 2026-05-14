@@ -1,6 +1,7 @@
 from turtle import Turtle,Screen
 import time
 from Food import  Food
+from scoreboard import Scoreboard
 
 starting_point = [(0,0),(-20,0),(-40,0)]
 
@@ -13,13 +14,19 @@ screen.setup(width=500, height=500)
 
 segments = []
 
-for position  in starting_point:
+def add_segment(position):
     snake = Turtle("square")
     snake.color("white")
     snake.penup()
     snake.speed("fastest")
     snake.goto(position)
     segments.append(snake)
+
+for position  in starting_point:
+    add_segment(position)
+
+def extend():
+    add_segment(segments[-1].position())
 
 def move_up():
     if segments[0].heading() != 270:
@@ -50,6 +57,7 @@ def move():
     segments[0].forward(20)
 
 food = Food()
+score = Scoreboard()
 
 game_is_on = True
 
@@ -58,14 +66,28 @@ while game_is_on:
     time.sleep(0.2)
     move()
 
-#     detect collision
+#     detect collision with food
     if segments[0].distance(food) < 15:
         food.refresh()
+        extend()
+        score.increase()
+
+
+#      detect collision with wall
+    if segments[0].xcor() > 240 or segments[0].xcor() < -240 or segments[0].ycor() > 240 or segments[0].ycor() < -240:
+        game_is_on = False
+        score.game_over()
+
+#     detect collision with tail
+    for segment in segments:
+        if segment == segments[0]:
+            pass
+        elif segments[0].distance(segment) < 10:
+            game_is_on = False
+            score.game_over()
 
 
 
-
-screen.mainloop()
 
 screen.exitonclick()
 
