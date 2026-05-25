@@ -21,6 +21,12 @@ def add_segment(position):
     snake.speed("fastest")
     snake.goto(position)
     segments.append(snake)
+def reset():
+    for segment in segments:
+        segment.goto(1000, 1000)
+    segments.clear()
+    for position in starting_point:
+        add_segment(position)
 
 for position  in starting_point:
     add_segment(position)
@@ -75,16 +81,17 @@ while game_is_on:
 
 #      detect collision with wall
     if segments[0].xcor() > 240 or segments[0].xcor() < -240 or segments[0].ycor() > 240 or segments[0].ycor() < -240:
-        game_is_on = False
-        score.game_over()
+        score.reset()
+        reset()
+
 
 #     detect collision with tail
     for segment in segments:
         if segment == segments[0]:
             pass
         elif segments[0].distance(segment) < 10:
-            game_is_on = False
-            score.game_over()
+           score.reset()
+           reset()
 
 
 
