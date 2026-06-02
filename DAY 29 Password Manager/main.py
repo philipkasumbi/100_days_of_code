@@ -44,20 +44,32 @@ def add_data():
         # is_okay = messagebox.askokcancel(title=website_value,message=f"These are the details you've entered:\nEmail: {username_value}"
         #                                                    f"\nPassword: {password_value}\nIs it okay to save?")
         # if is_okay:
-        with open("data.json","r") as file:
-            # reading old data
-            data = json.load(file)
-            # updating new data with old data
-            data.update(new_data)
-        with open("data.json","w") as file:
-            # saving updated new data
-            json.dump(data,file,indent=4)
+        try:
+            with open("data.json","r") as file:
+                # reading old data
+                data = json.load(file)
+                # updating new data with old data
+                data.update(new_data)
+        except FileNotFoundError:
+            with open("data.json","w") as file:
+                # saving updated new data
+                json.dump(new_data,file,indent=4)
+        else:
+            with open("data.json","r") as file:
+                # reading old data
+                data = json.load(file)
+                # updating new data with old data
+                data.update(new_data)
+            with open("data.json","w") as file:
+                # saving updated new data
+                json.dump(data,file,indent=4)
+        finally:
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
+            website_entry.focus()
 
-    website_entry.delete(0,END)
-    password_entry.delete(0, END)
-    website_entry.focus()
 
-
+   
 # ----------------------UI SETUP----------------
 root = Tk()
 root.title('Password Manager')
