@@ -2,6 +2,7 @@ from  tkinter import  *
 from tkinter import  messagebox
 from random import choice,randint,shuffle
 import pyperclip
+import json
 
 # -------------------GENERATE PASSWORD-----------------
 def generate_strong_password():
@@ -29,16 +30,28 @@ def add_data():
     website_value = website_entry.get()
     username_value = username_entry.get()
     password_value = password_entry.get()
+    new_data = {
+        website_value:{
+            "email":username_value,
+            "password":password_value
+        }
+
+    }
 
     if len(website_value) == 0 or len(username_value) == 0 or len(password_value) == 0:
         messagebox.showinfo(title="Oops",message="Please don't leave any field empty")
     else:
-        is_okay = messagebox.askokcancel(title=website_value,message=f"These are the details you've entered:\nEmail: {username_value}"
-                                                           f"\nPassword: {password_value}\nIs it okay to save?")
-
-        if is_okay:
-            with open("data.txt","a") as file:
-                file.write(f"{website_value} | {username_value} | {password_value}\n")
+        # is_okay = messagebox.askokcancel(title=website_value,message=f"These are the details you've entered:\nEmail: {username_value}"
+        #                                                    f"\nPassword: {password_value}\nIs it okay to save?")
+        # if is_okay:
+        with open("data.json","r") as file:
+            # reading old data
+            data = json.load(file)
+            # updating new data with old data
+            data.update(new_data)
+        with open("data.json","w") as file:
+            # saving updated new data
+            json.dump(data,file,indent=4)
 
     website_entry.delete(0,END)
     password_entry.delete(0, END)
