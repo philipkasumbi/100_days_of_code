@@ -68,8 +68,20 @@ def add_data():
             password_entry.delete(0, END)
             website_entry.focus()
 
+# -------------------------------SEARCH WEBSITE---------------------
 
-   
+def find_password():
+    website_value = website_entry.get()
+    with open("data.json","r") as file:
+        data = json.load(file)
+
+        if website_value in data:
+            messagebox.showinfo(title=website_value,message=f"The email is: {data[website_value]["email"]} and the password is: {data[website_value]["password"]}")
+
+        else:
+            messagebox.showinfo(title="Oops",message="The website  not Found")
+
+
 # ----------------------UI SETUP----------------
 root = Tk()
 root.title('Password Manager')
@@ -93,7 +105,7 @@ password = Label(text="Password",font=("Arial",17,"bold"))
 password.grid(row=3,column=0)
 
 # entries
-website_entry = Entry(width=30,font=("Times New Roman",20))
+website_entry = Entry(width=15,font=("Times New Roman",20))
 website_entry.grid(row=1,column=1, columnspan=2)
 website_entry.focus()
 
@@ -107,6 +119,9 @@ password_entry.grid(row=3,column=1)
 # buttons
 generate_password = Button(text="Generate_password",command=generate_strong_password)
 generate_password.grid(row=3,column=2)
+
+search = Button(text="Search",width=10,font=("Times New Roman",14),command=find_password)
+search.grid(row=1,column=2)
 
 add = Button(text="Add",width=31,command=add_data)
 add.grid(row=4,column=1,columnspan=2)
