@@ -25,11 +25,23 @@ def flip_card():
     canvas.itemconfig(word,text=random_card["English"],fill="white")
     canvas.itemconfig(canvas_image,image=back_image)
 
+def remove_card():
+    record_data.remove(random_card)
+
+    # words to learn
+    new_data = pandas.DataFrame(record_data)
+    new_data.to_csv("data/words_to_learn.csv", index=False)
+
+    next_card()
+
 
 # read data
-df = pandas.read_csv("data/language_data.csv")
-record_data = df.to_dict(orient="records")
+try:
+    data = pandas.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+    data = pandas.read_csv("data/language_data.csv")
 
+record_data = data.to_dict(orient="records")
 
 
 canvas = Canvas(window,width=800,height=526)
@@ -53,7 +65,7 @@ unknown_button = Button(image=wrong_image,highlightthickness=0,command=next_card
 unknown_button.grid(row=0,column=0)
 
 right_image = PhotoImage(file="images/right.png")
-known_button = Button(image=right_image,highlightthickness=0,command=next_card)
+known_button = Button(image=right_image,highlightthickness=0,command=remove_card)
 known_button.grid(row=0,column=2)
 
 
