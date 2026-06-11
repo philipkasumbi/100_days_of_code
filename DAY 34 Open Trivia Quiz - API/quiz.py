@@ -21,6 +21,9 @@ class Questions:
         else:
             return self.question_bank[self.current_number]["question"]
 
+    def check_answer_check(self):
+        correct_answer = self.question_bank[self.current_number]["answer"]
+        return correct_answer
 
 question_bank = []
 
@@ -34,3 +37,4 @@ for item in question_data:
 
     question_bank.append(ques_answer)
 
+print(question_bank)
