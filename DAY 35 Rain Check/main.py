@@ -1,13 +1,24 @@
 import requests
-api_key = "1a7842126dc841430eaf9336166356d8"
+from twilio.rest import Client
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+api_key = os.getenv("OPENWEATHER_API_KEY")
 url = "https://api.openweathermap.org/data/2.5/forecast"
+
+account_sid = os.getenv("TWILIO_ACCOUNT_SID")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+client = Client(account_sid, auth_token)
+
 
 parameters = {
     "lat":-1.365010,
     "lon":38.011570,
     "appid":api_key,
     "lang":"en",
-    "units":"metrics",
+    "units":"metric",
     "cnt":4,
 }
 
@@ -22,9 +33,20 @@ for forecast in weather_data["list"]:
     weather_list= forecast["weather"]
     for id in weather_list:
         id_code = id["id"]
-        if int(id_code) <= 700:
+        if int(id_code) < 700:
             will_rain = True
-            
+
 if will_rain:
-    print("Bring Umbrella")
+    try:
+        message = client.messages.create(
+            body="Today it might rain, don't forget to carry your ☔",
+            from_="+19086417409",
+            to="+254790553620"
+        )
+        print(message.sid)
+
+    except Exception as e:
+        print(e)
+
+
 
