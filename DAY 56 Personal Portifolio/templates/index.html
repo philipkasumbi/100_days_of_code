@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Philip Kasumbi portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>PHILIP KASUMBI</h1>
+								<p>Computer Scientist | Python Developer | Data Analyst<br>
+									<em>I build software, analyze data, and develop intelligent systems that solve real-world problems.</em>
+								</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<li>
+									<a href="{{ url_for('static', filename='assets/cv/PHILIP KASUMBI CV.docx') }}" target="_blank">Download CV
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<span class="image main"><img src="static/images/pic001.jpeg" alt="" /></span>
+								<p> Hello! I'm <strong>Philip Kasumbi</strong>, a Computer Scientist passionate about software engineering, data analytics, and artificial intelligence. I build scalable web applications, automate workflows, and develop data-driven solutions using Python, Flask, SQL, Power BI, and modern development tools.</p>
+								<p>My goal is to create technology that improves decision-making and solves meaningful real-world challenges. I enjoy learning new technologies, tackling complex problems, and continuously expanding my knowledge through hands-on projects and practical experience.</p>
+								<p>Take a look at my <a href="#work">awesome work</a> to see some of the projects I've built, and feel free to reach out if you'd like to collaborate or discuss opportunities.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Work</h2>
+								<span class="image main"><img src="static/images/pic002.jpeg" alt="" /></span>
+								<p>
+        My GitHub portfolio features practical software engineering and data analytics projects that solve real-world problems using Python, SQL, Flask, Power BI, and modern development tools.
+    </p>
+
+    <ul>
+        <li>📊 Sales Performance Analysis</li>
+        <li>📈 Customer Churn Analysis</li>
+        <li>👥 HR Analytics Dashboard</li>
+        <li>💹 Financial Data Analysis</li>
+        <li>🗄️ SQL Business Analytics Projects</li>
+        <li>📉 Interactive Power BI Dashboards</li>
+        <li>🐍 Python Automation Scripts</li>
+
+    </ul>
+
+    <p>
+        Every project includes well-documented source code, data analysis, visualizations, business insights, and recommendations that demonstrate my technical skills and analytical thinking.
+    </p>
+
+    <p style="text-align:center;">
+        <a href="https://github.com/philkasumbi" target="_blank" class="button">
+            View My GitHub Portfolio
+        </a>
+    </p>
+							</article>
+
+						<!-- About -->
+						<article id="about">
+    <h2 class="major">About</h2>
+    <span class="image main">
+        <img src="static/images/pic004.jpeg" alt="About Philip Kasumbi" />
+    </span>
+
+    <p>
+        Hello! I'm <strong>Philip Kasumbi</strong>, a Computer Scientist who enjoys solving problems with technology. What began as a curiosity about how software works has grown into a passion for developing applications, analyzing data, and building intelligent solutions that make a real difference.
+    </p>
+
+    <p>
+        I enjoy learning by building. Every project I undertake is an opportunity to improve my technical skills, deepen my understanding of software engineering, and apply analytical thinking to real-world challenges. My work combines Python development, web technologies, data analytics, and business intelligence to create practical solutions with lasting value.
+    </p>
+
+    <p>
+        Outside of coding, I believe in continuous learning, collaboration, and embracing new challenges. My goal is to build technology that not only works well but also helps people make better decisions and solve meaningful problems.
+    </p>
+</article>
+						<!-- Contact -->
+					<article id="contact">
+    <h2 class="major">Contact</h2>
+
+    <p>
+        I'm always open to discussing software development, data analytics,
+        internships, freelance opportunities, or collaborations.
+        Feel free to send me a message, and I'll get back to you as soon as possible.
+    </p>
+
+    <form method="POST" action="{{ url_for('contact') }}">
+        <div class="fields">
+            <div class="field half">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required />
+            </div>
+
+            <div class="field half">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required />
+            </div>
+
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4" required></textarea>
+            </div>
+        </div>
+
+        <ul class="actions">
+            <li>
+                <input type="submit" value="Send Message" class="primary" />
+            </li>
+            <li>
+                <input type="reset" value="Reset" />
+            </li>
+
+        </ul>
+    </form>
+
+    <hr />
+
+    <h3>Contact Information</h3>
+
+    <p>
+        <strong>Email:</strong><br>
+        <a href="mailto:philipkasumbi8@gmail.com">
+            philipkasumbi8@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <strong>Phone:</strong><br>
+        +254 790 553 620
+    </p>
+
+    <p>
+        <strong>Location:</strong><br>
+        Nairobi, Kenya
+    </p>
+
+    <ul class="icons">
+        <li>
+            <a href="https://github.com/philkasumbi"
+               target="_blank"
+               class="icon brands fa-github">
+                <span class="label">GitHub</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.linkedin.com/in/philipkasumbi"
+               target="_blank"
+               class="icon brands fa-linkedin">
+                <span class="label">LinkedIn</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="mailto:philipkasumbi8@gmail.com"
+               class="icon solid fa-envelope">
+                <span class="label">Email</span>
+            </a>
+        </li>
+    </ul>
+</article>
+
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; philip kasumbi 2026.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
