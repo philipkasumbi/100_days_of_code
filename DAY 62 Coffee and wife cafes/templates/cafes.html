@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Available Cafes</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid header">
+    <h1 class="display-1 topic">Available cafes</h1>
+    <a class="btn btn-warning" href="{{ url_for('add') }}" role="button">Add new cafe</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cafe</th>
+                <th>Location</th>
+                <th>Open</th>
+                <th>Close</th>
+                <th>Coffee</th>
+                <th>Wifi</th>
+                <th>Power</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in cafes %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

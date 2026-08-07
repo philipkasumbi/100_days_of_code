@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid header">
+    <h1 class="display-1 topic">
+        <img src="static/images/coffe.jpg" class="coffee-icon">Coffee & Wifi<img src="static/images/laptop.jpg" class="coffee-icon">
+    </h1>
+    <p>Want to work in a cafe but need power and wifi?</p>
+    <hr class="border border-dark border-2 opacity-50">
+     <p>You have found the right place! checkout my collection of cafes with data on, power socket availability,wifi speed and coffee quality  </p>
+    <a class="btn btn-warning" href="{{ url_for('cafes') }}" role="button">Show Me</a>
+</div>
+
+{% endblock %}

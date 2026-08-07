@@ -1,0 +1,49 @@
+body{
+    background-color: #000;
+    font-family: sans-serif;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.header{
+    background-color: dimgrey;
+    padding: 70px 0;
+}
+.coffee-icon {
+  width: 70px;
+  height: 70px;
+    margin: 0 10px;
+}
+.topic{
+    color: white;
+    font-weight: bold;
+}
+p{
+    color: #ccdbd0;
+    font-size: 20px;
+    font-weight: lighter;
+    margin: 20px 30px;
+}
+a{
+    margin: 20px;
+}
+hr{
+    margin: 0 40px;
+}
+.add_cafe{
+    background-color: dimgrey;
+    text-align: left;
+    padding: 30px 30px;
+
+}
+.add_para{
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+}
+label{
+    color: #ffffff;
+}
+.form-input{
+    width: 70%;
+}
