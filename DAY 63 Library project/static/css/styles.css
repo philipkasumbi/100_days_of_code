@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.books{
+    padding: 50px 90px;
+}
+.actions{
+    margin-right: 20px;
+}

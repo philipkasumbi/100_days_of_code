@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Add Books</title>
+{% endblock %}
+
+{% block content %}
+<h1>add books</h1>
+
+<form method="POST" class="row g-3 books">
+    {{ form.hidden_tag() }}
+
+    <div class="col-lg-4 col-md-12">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+    </div>
+       <div class="col-lg-4 col-md-12">
+        {{ form.author.label(class="form-label") }}
+        {{ form.author(class="form-control") }}
+    </div>
+     <div class="col-lg-4 col-md-12">
+        {{ form.rating.label(class="form-label") }}
+        {{ form.rating(class="form-control") }}
+    </div>
+    <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Add Book</button>
+    </div>
+</form>
+{% endblock %}
