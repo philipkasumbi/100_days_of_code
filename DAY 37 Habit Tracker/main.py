@@ -47,9 +47,9 @@ post_graph_endpoint_configs = {
 response = requests.post(url=post_graph_endpoint,json=post_graph_endpoint_configs,headers=headers)
 print(response.text)
 
-put_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{ID}/20260615"
+put_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{ID}/20260619"
 put_configs ={
-    "quantity":"12"
+    "quantity":"20"
 }
 
 # response = requests.put(url=put_endpoint,json=put_configs,headers=headers)
