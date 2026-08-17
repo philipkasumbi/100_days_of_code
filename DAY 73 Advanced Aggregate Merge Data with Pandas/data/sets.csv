@@ -1,0 +1,31 @@
+set_num,name,year,theme_id,num_parts
+001-1,Town Plan,1955,1,12
+002-1,Fire Station,1955,1,18
+003-1,Police Station,1956,1,22
+004-1,Rescue Helicopter,1957,1,15
+005-1,Race Car,1958,1,10
+006-1,Space Explorer,1958,2,25
+007-1,Castle,1959,3,45
+008-1,Pirate Ship,1960,4,60
+1000-1,City Square,1965,1,120
+1001-1,Fire Rescue,1970,1,150
+1002-1,Police Patrol,1975,1,180
+1003-1,Space Shuttle,1980,2,220
+1004-1,Medieval Castle,1985,3,350
+1005-1,Pirate Adventure,1990,4,420
+1006-1,Heartlake Cafe,1995,5,180
+1007-1,Ninjago Dragon,2000,6,320
+1008-1,Harry Potter Castle,2001,7,410
+1009-1,Technic Excavator,2002,8,560
+1010-1,Star Wars X-Wing,2003,9,700
+1011-1,Creator Family House,2004,10,850
+1012-1,City Hospital,2005,11,900
+1013-1,Friends Mall,2006,12,1100
+1014-1,Technic Racing Car,2007,13,750
+1015-1,Ninjago Temple,2008,6,1200
+1016-1,Architecture Skyline,2010,14,600
+1017-1,Classic Bricks,2012,15,250
+1018-1,Minecraft Village,2014,16,850
+1019-1,Duplo Farm,2016,17,180
+1020-1,Millennium Falcon,2018,18,4780
+1021-1,Technic Supercar,2020,19,3700
